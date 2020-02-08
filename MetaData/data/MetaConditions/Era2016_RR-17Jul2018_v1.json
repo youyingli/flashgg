@@ -80,7 +80,7 @@
         }
     },
     
-    "MUON_ID" : "Medium",
+    "MUON_ID" : "Tight",
     "MUON_ISO" : "LooseRel",
     "MUON_ID_JSON_FileName" : "flashgg/Systematics/data/Muon2016_RunBCDEFGH_SF_ID.json",
     "MUON_ID_JSON_FileName_LowPt" : "",
@@ -90,7 +90,7 @@
 
 
     "Ele_ID_SF_FileName" : "flashgg/Systematics/data/combined_eleIDSFs_2016LegacyReReco.json",
-    "Ele_ID_version" : "mvaEleID-Fall17-iso-V2-wp90",
+    "Ele_ID_version" : "cutBasedElectronID-Fall17-94X-V2-loose",
 
     "Ele_reco_SF_FileName" : "flashgg/Systematics/data/2016_reco-eff.json",
 

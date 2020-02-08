@@ -312,14 +312,14 @@ namespace flashgg {
         edm::RefProd<vector<VHTagTruth> > rTagTruth = evt.getRefBeforePut<vector<VHTagTruth> >();
 
         Point higgsVtx;
-        bool associatedZ=0;
-        bool associatedW=0;
-        bool VhasDaughters=0;
-        bool VhasNeutrinos=0;
-        bool VhasLeptons=0;
-        bool VhasHadrons=0;
-        bool VhasMissingLeptons=0;
-        float Vpt=0;
+        bool associatedZ   = 0;
+        bool associatedW   = 0;
+        bool VhasDaughters = 0;
+        bool VhasNeutrinos = 0;
+        bool VhasLeptons   = 0;
+        bool VhasHadrons   = 0;
+        bool VhasMissingLeptons = 0;
+        float Vpt = 0;
 
         if ( !evt.isRealData() ) {
 
@@ -416,7 +416,7 @@ namespace flashgg {
             if( !hasGoodElec && !hasGoodMuons ) { continue; }
             //including SFs for leading muon or electron 
             if( goodMuons.size() > 0 ) {
-                whleptonictags_obj.includeWeightsByLabel( *goodMuons.at(0), "MuonWeight");
+                whleptonictags_obj.includeWeights( *goodMuons.at(0) );
             } else if ( goodElectrons.size() > 0 ) {
                 whleptonictags_obj.includeWeights( *goodElectrons.at(0) );
             }
@@ -466,7 +466,7 @@ namespace flashgg {
 
             TLorentzVector diphoP4(dipho->px(), dipho->py(), dipho->pz(), dipho->energy());
             if (ele_pt > mu_pt) {
-                Ptr<pat::Electron> elec = goodElectrons[0];
+                Ptr<flashgg::Electron> elec = goodElectrons[0];
                 TLorentzVector elecP4(elec->px(), elec->py(), elec->pz(), elec->energy());
                 _mtlnu         = sqrt( 2. * elec->et() * theMET->getCorPt() * ( 1 - cos( elec->phi() - theMET->getCorPhi() ) ) );
                 _theta         = diphoP4.Angle(elecP4.Vect());
@@ -512,11 +512,10 @@ namespace flashgg {
             float ptV = dipho->pt();
 
             // Categorization by WHMVA & ptV (> 75 GeV and < 75 GeV)
-            //int catnum = chooseCategory( whmva, ptV );
-            int catnum = 0;
+            int catnum = chooseCategory( whmva, ptV );
 
             if( catnum != -1 ) {
-                //whleptonictags_obj.setCategoryNumber( catnum );
+                whleptonictags_obj.setCategoryNumber( catnum );
                 whleptonictags_obj.setJets( tagJets );
                 whleptonictags_obj.setMuons( goodMuons );
                 whleptonictags_obj.setElectrons( goodElectrons );
