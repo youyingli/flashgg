@@ -166,7 +166,8 @@ class WorkNodeJob(object):
         else:
             try:
                 proxy = BatchRegistry.getProxy()
-                proxyname = proxy.split(":")[1]
+                #proxyname = proxy.split(":")[1]
+                proxyname = "/afs/cern.ch/user/y/youying/x509up_u91519"
                 script += "export X509_USER_PROXY=%s\n" % proxyname
                 if WorkNodeJob.nwarnings > 0:
                     WorkNodeJob.nwarnings -= 1
