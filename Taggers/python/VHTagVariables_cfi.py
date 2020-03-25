@@ -73,19 +73,25 @@ jet_variables=[
     "jet1_Eta        := ?(jets.size>0)? jets.at(0).eta    : -999",
     "jet1_Phi        := ?(jets.size>0)? jets.at(0).phi    : -999",
     "jet1_E          := ?(jets.size>0)? jets.at(0).energy : -999",
-    "jet1_btag       := ?(jets.size>0)? jets.at(0).bDiscriminator('pfCombinedInclusiveSecondaryVertexV2BJetTags') : -999",
     "jet1_deepbtag   := ?(jets.size>0)? jets.at(0).bDiscriminator('pfDeepCSVJetTags:probb') + jets.at(0).bDiscriminator('pfDeepCSVJetTags:probbb') : -999",
     "jet2_Pt         := ?(jets.size>1)? jets.at(1).pt     : -999",
     "jet2_Eta        := ?(jets.size>1)? jets.at(1).eta    : -999",
     "jet2_Phi        := ?(jets.size>1)? jets.at(1).phi    : -999",
     "jet2_E          := ?(jets.size>1)? jets.at(1).energy : -999",
-    "jet2_btag       := ?(jets.size>1)? jets.at(1).bDiscriminator('pfCombinedInclusiveSecondaryVertexV2BJetTags') : -999",
     "jet2_deepbtag   := ?(jets.size>1)? jets.at(1).bDiscriminator('pfDeepCSVJetTags:probb') + jets.at(1).bDiscriminator('pfDeepCSVJetTags:probbb') : -999"
 ]
 
 met_variables=[
-    "met_Pt  := met.corPt()",
-    "met_Phi := met.corPhi()"
+    "met_Pt        := met.corPt()",
+    "met_Phi       := met.corPhi()",
+    "met_sumEt     := met.sumEt()",
+    "met_Sig       := met.mEtSig()",
+    "met_RealSig   := met.significance()"
+]
+
+extra_variables=[
+    "minDeltaPhiJetMet   := MinDeltaPhiJetMet()",
+    "maxJetDeepCSV       := MaxJetDeepCSV()"
 ]
 
 gen_variables=[

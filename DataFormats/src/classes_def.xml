@@ -100,7 +100,10 @@
 </class>
 <class name="std::vector<flashgg::TTHHadronicTag>"/>
 <class name="edm::Wrapper<std::vector<flashgg::TTHHadronicTag> >"/>
-<class name="flashgg::VHMetTag" ClassVersion="11">
+<class name="flashgg::VHMetTag" ClassVersion="14">
+ <version ClassVersion="14" checksum="695186757"/>
+ <version ClassVersion="13" checksum="1057253132"/>
+ <version ClassVersion="12" checksum="1910112795"/>
    <version ClassVersion="10" checksum="3643272763"/>
    <version ClassVersion="11" checksum="619869289"/>
 </class>
