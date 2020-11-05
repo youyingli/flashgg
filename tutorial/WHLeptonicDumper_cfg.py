@@ -16,7 +16,7 @@ process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32( 1 )
 
 process.source = cms.Source ("PoolSource",
                              fileNames = cms.untracked.vstring(
-'file:myMicroAODOutputFile_numEvent1000.root'
+'file:/eos/cms/store/user/youying/forTutorial/myMicroAODOutputFile_numEvent1000.root'
                              )
 )
 
