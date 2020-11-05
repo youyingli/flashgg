@@ -1,4 +1,4 @@
-outdir="/afs/cern.ch/work/y/youying/UL_flashgg/PRcheck/CMSSW_10_6_8/src/tutorial/demo2"
+outdir=$CMSSW_BASE/src/tutorial/demo
 
 fggRunJobs.py --load legacy_runII_v2_2016.json \
               -d $outdir \
