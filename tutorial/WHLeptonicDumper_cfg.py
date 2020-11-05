@@ -108,7 +108,7 @@ wh_variables = [
 
 ]
 
-#wh_variables = [
+#wh_variables += [
 #    "n_jets      := jets.size"
 #]
 #
